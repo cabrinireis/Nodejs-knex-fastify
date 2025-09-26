@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.6.1"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^24.5.2",
+    "eslint": "^8.57.1",
+    "typescript": "^5.9.2"
+  }
+}
