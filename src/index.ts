@@ -1,9 +1,11 @@
 import fastify from 'fastify'
+import { knex } from './database'
 
 const server = fastify()
 
 server.get('/ping', async (request, reply) => {
-  return 'pong\n'
+  const tables = knex('sqlite_schema').select('*')
+  return tables
 })
 
 server.listen({ port: 8080 }, (err, address) => {
