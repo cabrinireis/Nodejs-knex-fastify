@@ -1,12 +1,9 @@
 import fastify from 'fastify'
-import { knex } from './database'
+import { transactionsRoute } from './routes/transactions'
 
 const server = fastify()
 
-server.get('/ping', async () => {
-  const tables = knex('sqlite_schema').select('*')
-  return tables
-})
+server.register(transactionsRoute)
 
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
