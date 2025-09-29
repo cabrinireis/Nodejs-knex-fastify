@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "tsx watch src/src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "knex": "tsx ./node_modules/knex/bin/cli.js",
     "migrate:make": "npm run knex -- migrate:make",
     "migrate:latest": "npm run knex -- migrate:latest",
