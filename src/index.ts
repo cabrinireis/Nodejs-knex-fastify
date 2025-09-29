@@ -3,7 +3,7 @@ import { knex } from './database'
 
 const server = fastify()
 
-server.get('/ping', async (request, reply) => {
+server.get('/ping', async () => {
   const tables = knex('sqlite_schema').select('*')
   return tables
 })
