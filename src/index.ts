@@ -3,7 +3,9 @@ import { transactionsRoute } from './routes/transactions'
 
 const server = fastify()
 
-server.register(transactionsRoute)
+server.register(transactionsRoute, {
+  prefix: 'transactions',
+})
 
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
