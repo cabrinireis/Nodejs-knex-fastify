@@ -1,13 +1,10 @@
 import fastify from 'fastify'
 import { transactionsRoute } from './routes/transactions'
+const app = fastify({ logger: true })
 
-const server = fastify()
+app.register(transactionsRoute, { prefix: 'transactions' })
 
-server.register(transactionsRoute, {
-  prefix: 'transactions',
-})
-
-server.listen({ port: 8080 }, (err, address) => {
+app.listen({ port: 3000 }, (err, address) => {
   if (err) {
     console.error(err)
     process.exit(1)

@@ -6,7 +6,6 @@ const envSchema = z.object({
   DATABASE_URL: z.string(),
   PORT: z.coerce.number().default(8080),
 })
-
 const _env = envSchema.safeParse(process.env)
 
 if (_env.success === false) {
